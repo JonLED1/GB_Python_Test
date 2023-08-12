@@ -39,3 +39,9 @@ class NoteBook:
         self._note_book.append(new)
         return new.get('id')
     
+    def change(self, index, note):
+        self._note_book[index]['text']=note
+        
+    def delete(self, index):
+        self._note_book.pop(index)
+    

@@ -15,15 +15,33 @@ while True:
             my_nb.save()
             view.print_message(text.save_successful)
         case 3:
-            pb = my_nb.load()
-            view.print_notes(pb, text.nb_empty)
+            nb = my_nb.load()
+            view.print_notes(nb, text.nb_empty)
         case 4:
-            note = view.input_note(text.input_new_note)
+            note = view.input_value(text.input_new_note)
             id = my_nb.add(note)
             view.print_message(text.new_note_successful(id))
         case 5:
-            pass
+            id = view.input_value(text.change_index)
+            nb = my_nb.load()
+            for n in range(len(nb)):
+                if nb[n].get('id')==id:
+                    new_text = view.input_value( nb[n].get('text'))
+                    my_nb.change(n, new_text)
+                    view.print_message(text.change_successful(id))
+                    break
+            else:
+                view.print_message(text.change_error(id))
         case 6:
-            pass
+            id = view.input_value(text.del_index)
+            nb = my_nb.load()
+            for n in range(len(nb)):
+                if nb[n].get('id')==id:
+                    my_nb.delete(n)
+                    view.print_message(text.del_successful(id))
+                    break
+            else:
+                view.print_message(text.del_error(id))            
         case 7:
+            
             break

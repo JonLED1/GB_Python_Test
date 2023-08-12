@@ -32,9 +32,8 @@ def print_notes(book: list[dict[str, str]], error: str):
     else:
         print_message(error)
         
-def input_note(message):
-    value = input(message)
+
+def input_value(message):
+    value = input(message+' - ')
     return value
-
-
 

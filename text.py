@@ -15,15 +15,17 @@ save_successful = 'Файл успешно сохранен!'
 nb_empty = 'Файл пуст или не загружен!'
 
 input_new_note = 'Введите новую запись: '
-
 def new_note_successful(id):
     return f'Запись №{id} успешно добавлена!'
 
+change_index = 'Введите индекс записи для изменения: '
+def change_successful(id):
+    return f'Запись №{id} успешно изменена!'
+def change_error(id):
+    return f'Запись №{id} не найдена!'
 
-input_change = 'Какую запись будем менять: '
-input_index = 'Введите индекс записи: '
-
-change_contact = 'Введите новые данные или оставьте поле пустым, чтоб не менять: '
-
-def change_successful(name: str) -> str:
-    return f'Запись {name} успешно изменена!'
+del_index = 'Введите индекс записи для удаления: '
+def del_successful(id):
+    return f'Запись №{id} успешно удалена!'
+def del_error(id):
+    return f'Запись №{id} не найдена!'
