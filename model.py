@@ -2,7 +2,7 @@ import datetime
 
 class NoteBook:
 
-    def __init__(self, path: str = 'c:/Git/GB_Python_Test/notes.txt'):
+    def __init__(self, path: str = 'notes.txt'):
         self._note_book: list[dict[str, str]] = []
         self._path = path
         self._last_id = 0
